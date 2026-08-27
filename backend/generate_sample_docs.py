@@ -306,10 +306,96 @@ def create_placement_doc():
     doc.build(story)
 
 
+def create_principal_admin_doc():
+    filename = "sample_data/Principal_Office_and_Administration_Directory_2026.pdf"
+    doc = SimpleDocTemplate(filename, pagesize=letter, leftMargin=40, rightMargin=40, topMargin=40, bottomMargin=40)
+    story = []
+
+    story.append(Paragraph("EXCELSIOR INSTITUTE OF TECHNOLOGY & SCIENCE", title_style))
+    story.append(Paragraph("Principal's Office & Campus Administration Directory 2026-27", h2_style))
+    story.append(Spacer(1, 10))
+
+    story.append(Paragraph("<b>1. Office of the Principal</b>", h2_style))
+    story.append(Paragraph(
+        "• Principal: <b>Dr. Arvind S. Hegde</b>, Ph.D. (IIT Bombay), Senior Member IEEE.<br/>"
+        "• Principal Direct Office Phone: <b>080-23456701</b> / <b>+91-9845012345</b>.<br/>"
+        "• Secretarial Desk & Executive Assistant: <b>080-23456700</b> (Ext: 101).<br/>"
+        "• Principal Email: <b>principal@college.edu</b> / <b>office.principal@college.edu</b>.<br/>"
+        "• Office Chamber Location: Administrative Block, Ground Floor, Room <b>AD-101</b>.<br/>"
+        "• Student & Parent Visiting Hours: Monday to Friday, <b>3:30 PM – 5:00 PM</b> (Prior appointment recommended via secretarial desk).",
+        body_style
+    ))
+
+    story.append(Paragraph("<b>2. Key Administrative Officials Directory</b>", h2_style))
+    table_data = [
+        ["Designation / Office", "Official Name", "Direct Phone / Ext", "Official Email"],
+        ["Principal", "Dr. Arvind S. Hegde", "080-23456701 / +91-9845012345", "principal@college.edu"],
+        ["Vice Principal (Academics)", "Dr. K. V. Raman", "080-23456702", "vp.academics@college.edu"],
+        ["Registrar & Administration", "Prof. Shridhar Bhat", "080-23456705", "registrar@college.edu"],
+        ["Controller of Exams (COE)", "Dr. M. S. Rao", "080-23456710", "coe@college.edu"],
+        ["Dean of Student Affairs", "Dr. Kavitha S.", "080-23456715", "studentwelfare@college.edu"],
+        ["Head of Placements", "Dr. Sunita Kulkarni", "080-23456799", "placements@college.edu"],
+        ["Chief Warden (Hostels)", "Prof. R. K. Verma", "080-23456781", "warden.boys@college.edu"],
+    ]
+    t = Table(table_data, colWidths=[130, 110, 140, 130])
+    t.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor("#1e3a8a")),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
+        ('ALIGN', (0,0), (-1,-1), 'LEFT'),
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0,0), (-1,-1), 8),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 4),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.grey),
+    ]))
+    story.append(t)
+    story.append(Spacer(1, 10))
+
+    story.append(Paragraph("<b>3. Emergency & Campus Helpline Numbers</b>", h2_style))
+    story.append(Paragraph(
+        "• 24x7 Campus Security Control Room: <b>080-23456790</b> / <b>+91-9845099999</b>.<br/>"
+        "• Campus Health Centre & Ambulance: <b>080-23456791</b> / <b>+91-9845088888</b>.<br/>"
+        "• Anti-Ragging Cell & Women Safety Helpline: <b>080-23456795</b> (Toll-Free: 1800-425-9999).",
+        body_style
+    ))
+
+    doc.build(story)
+
+
+def create_scholarships_doc():
+    filename = "sample_data/Scholarships_and_Financial_Aid_2026.pdf"
+    doc = SimpleDocTemplate(filename, pagesize=letter, leftMargin=40, rightMargin=40, topMargin=40, bottomMargin=40)
+    story = []
+
+    story.append(Paragraph("EXCELSIOR STUDENT WELFARE BOARD", title_style))
+    story.append(Paragraph("Scholarships, Fee Concessions & Financial Aid Guidelines 2026-27", h2_style))
+    story.append(Spacer(1, 10))
+
+    story.append(Paragraph("<b>1. Merit-Based Institutional Scholarships</b>", h2_style))
+    story.append(Paragraph(
+        "• <b>Founder's Merit Award:</b> 100% tuition fee waiver for top 3 rank holders in CET / PGCET entrance exam.<br/>"
+        "• <b>Academic Excellence Concession:</b> 50% tuition fee waiver for students securing CGPA >= 9.5 in university semester examinations.<br/>"
+        "• <b>Sports & Extra-Curricular Quota:</b> 25% fee waiver for national and state-level sports medalists.",
+        body_style
+    ))
+
+    story.append(Paragraph("<b>2. Government & Social Welfare Schemes</b>", h2_style))
+    story.append(Paragraph(
+        "• SC/ST Post-Matric Scholarship: 100% fee reimbursement through State SSP/NSP portal.<br/>"
+        "• OBC / EWS Fee Concession: Maintenance allowance and reimbursement as per state government guidelines.<br/>"
+        "• Scholarship Helpdesk Contact: Administrative Block Counter 4 | Email: <b>scholarships@college.edu</b> | Phone: 080-23456720.",
+        body_style
+    ))
+
+    doc.build(story)
+
+
 if __name__ == "__main__":
     create_mca_doc()
     create_hostel_doc()
     create_calendar_doc()
     create_exam_regulations_doc()
     create_placement_doc()
-    print("Generated 5 official sample college PDF documents in sample_data/")
+    create_principal_admin_doc()
+    create_scholarships_doc()
+    print("Generated all official sample college PDF documents in sample_data/")
+

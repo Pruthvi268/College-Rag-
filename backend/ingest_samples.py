@@ -43,6 +43,20 @@ SAMPLE_FILES = [
         "department": "Placement Cell",
         "academic_year": "2026-27",
     },
+    {
+        "filename": "Principal_Office_and_Administration_Directory_2026.pdf",
+        "title": "Principal's Office & Administration Directory 2026-27",
+        "category": "General",
+        "department": "Administration",
+        "academic_year": "2026-27",
+    },
+    {
+        "filename": "Scholarships_and_Financial_Aid_2026.pdf",
+        "title": "Scholarships & Financial Aid Guidelines 2026-27",
+        "category": "Scholarships",
+        "department": "Student Welfare",
+        "academic_year": "2026-27",
+    },
 ]
 
 
