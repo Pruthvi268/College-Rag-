@@ -41,6 +41,7 @@ collegerag.db
 qdrant_storage/
 backend/qdrant_storage/
 backend/test_qdrant/
+backend/sample_data/
 
 # Uploaded documents (keep directory structure)
 backend/uploads/*
